@@ -1,0 +1,461 @@
+
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Yokeshwaran M: A Professional CV</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css" />
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <style>
+
+    	.namecolor{
+
+    		  background-color: #3c3c3d;
+    	}
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .intro {
+        width:70%;
+        padding: 50%;
+
+      }
+      .photo {
+        width: 30%;
+        padding: 50%;
+      }
+      .flex-container{
+    width: 80%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */     
+    display: flex; /* Standard syntax */
+}
+.flex-container .column{
+    padding: 10px;
+    background: #537291;
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard syntax */
+}
+.flex-container{
+
+    background: #537291;
+}
+.column.bg-alt{
+    padding:10%;
+    background: #537291;
+}
+
+.inside-heading{
+  padding: 20px 50px 10px;
+  font-style:Verdana;
+  font-size:24px;
+  font-color:#FFFFFF;
+
+}
+.classtab {
+  padding-left: 20px;
+  padding-bottom:15%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+   text-align: left;
+    padding: 15px;
+}
+/*tr:nth-child(even) {
+  background-color: #dddddd;
+  padding: 20px 50px 0px;
+}*/
+/*.contentborder{
+  padding: 50 px;
+  width:100%;
+
+}*/
+.para{
+  font-family:Arial Black;
+  color:white;
+  font-size:20px;
+}
+img{
+  border-radius:20%;
+}
+.jumbotron-heading{
+  padding: 20px 15px 15px;
+  font-family:Coda Caption;
+  color:white;
+}
+.outerborder{
+  /*border-style:solid;*/
+  padding: 5px 10% 5%;
+  background-color: #303031;
+}
+.aboutme{
+  padding:5% 10% 0px;
+}
+.button {
+  padding: 15px 25px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #6C879C;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3c3c3d}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 500px;
+}
+.shape1,
+.shape2 {
+  stroke-dasharray: 1120;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #6C879C;
+  border-bottom: 5px solid black;
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 4s, stroke-dasharray 4s;
+}
+.shape1 {
+  stroke-dashoffset: 1120;
+}
+.shape2 {
+  stroke-dashoffset: -1120;
+}
+.text {
+  font-family: 'Verdana';
+  font-size: 22px;
+  line-height: 32px;
+/*  letter-spacing: 4px;*/
+  top: -48px;
+  padding-left:15px;
+  position: relative;
+}
+.svg-wrapper:hover .shape1,
+.svg-wrapper:hover .shape2 {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1120;
+}
+
+.icons {
+  float: left;
+
+
+}
+
+.lefty {
+  width: 75%;
+  text-align:left;
+}
+
+.righty {
+  width: 25%;
+  padding-left: 50px;
+}
+       .iconflex-iconcontainer {
+        display: flex;
+        justify-content: space-between;
+        font-color:white;
+        font-size:18px;
+        /*padding: 10px 22px;*/
+      }
+
+      .iconflex {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        width: 120px;
+      }
+
+      .iconflex:hover {
+        opacity: 0.4;
+      }
+
+      .iconflex .fa {
+        font-size: 40px;
+        color: #2f5876;
+      }
+  li{
+    padding-left:200px;
+
+    margin: 10px 0 0 0;
+  }
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <!--<h4 class="text-white">About</h4>-->
+          <h4 class="text-white">ENJOY SUCCESS AS A JOURNEY RATHER AS A DESTINATION</h4>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://www.linkedin.com/in/yokeshwaran-m-200868113/" target="_blank" class="text-white">Find me on LinkedIn</a></li>
+            <li><a href="https://github.com/Yokeshwaran95" target="_blank" class="text-white">Visit my Github</a></li>
+            <li><a href="https://www.hackerrank.com/yokeshwaran" target="_blank" class="text-white">Check my HackerRank</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between"><table><tr>
+    <td class="icons lefty"></a><h4 class="text-white" align="left"><marquee>Enjoy Success as a Journey, not as a Destination!!!</marquee></h4></td>
+    <td class="icons righty">
+    	      <div class="iconflex-iconcontainer">
+        <div class="iconflex">
+          <a href="http://yokitech.blogspot.com" target="_blank">
+            <i class="fa fa-globe" style="color:white"></i>
+          </a>
+        </div>
+        <div class="iconflex">
+          <a href="https://www.linkedin.com/in/yokeshwaran-m-200868113" target="_blank">
+            <i class="fa fa-linkedin" style="color:white"></i>
+          </a>
+        </div>
+
+        <div class="iconflex">
+          <a href="https://www.facebook.com/yohan.yokesh" target="_blank">
+            <i class="fa fa-facebook" style="color:white"></i>
+          </a>
+        </div>
+        <div class="iconflex">
+          <a href="https://github.com/Yokeshwaran95" target="_blank">
+            <i class="fa fa-github" style="color:white"></i>
+          </a>
+        </div>
+      </div>
+    </td>
+		</tr></table>
+    </div>
+  </div>
+</header>
+<main role="main">
+<div class="namecolor">
+  <section class="jumbotron text-center">
+  <div class="container">
+  <div class="flex-container">
+    <div class="column">
+          <h1 class="jumbotron-heading">YOKESHWARAN. M</h1>
+          <p class="para"><b>Senior Software Engineer</b></p>
+          <p class="para">Chennai, Tamilnadu, India</p>
+          <p>
+            <a href="mailto:yokeshmathi6895@gmail.com" class="btn btn-primary my-2"><i class="fa fa-envelope" style="color:white "></i> Email Me</a>
+            <a href="#" class="btn btn-secondary my-2"><i class="fa fa-phone-square" style="color:white"></i> 9003031858</a>
+          </p></div>
+<!--     <div class="column.bg-alt">
+      <img src= {% static 'Yokesh.jpg' %} height="300"></img>
+    </div> -->
+  </div>
+  </div>
+  </section>
+</div>
+
+<div class="outerborder">
+<section0 class="contentborder">
+
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+  <tr>
+         <td><div class="column.bg-alt">
+      <img src= {% static 'Yokesh.jpg' %} height="300"></img>
+    </div></td> 
+    <td class="aboutme"><div class="svg-wrapper">
+  <svg height="60" width="500" xmlns="http://www.w3.org/2000/svg">
+    <rect class="shape1" height="60" width="300" />
+    <rect class="shape2" height="60" width="300" />
+    <div class="text"><h2 class="text-white"><i class="fa fa-user-circle" style="color:white"></i> About Yokesh</h2></div>
+  </svg>
+</div>
+      <p class="text-white">An ambitious guy much passionate about developing electronics softwares, always belives in consistent learning that contributes to self-development and to the development of organization which I had chosen.</p>
+    <li class="text-white">Python Development/Automation</li>
+            <li class="text-white">Continuous Integration/Continuous Delivery</li>
+            <li class="text-white">Build and Release Engineer</li></td>
+      
+  </tr>
+     </div>
+    </div>
+  </div>
+</table>
+</section0>
+<br><br>
+
+
+
+
+<section1 class="contentborder">
+<h1 class="inside-heading" style="color:white"><i class="fa fa-briefcase" style="color:white"></i> My Work History:</h1>
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+      {% for experience in experiences.all %}
+        <div class="col-md-4">
+  <tr>
+    <td><img src="{{ experience.image.url }}" width="250" height="150" alt="Avatar"></img></td>
+    {% if "Integration" in experience.summary %}
+    <td><p class="text-white"><b><form action="{% url 'visteon' %}">
+          <button class="button" type="submit">{{ experience.summary }}</button></form></b></p></td>
+    {% endif %}
+    {% if "Automation" in experience.summary %}
+    <td><p class="text-white"><b><form action="{% url 'zf' %}">
+          <button class="button" type="submit">{{ experience.summary }}</button></form></b></p></td>
+    {% endif %}
+    <td><p class="text-white">{{ experience.description }}</p></td>
+
+  </tr>
+      {% endfor %}
+     </div>
+    </div>
+  </div>
+</table>
+</section1>
+<br><br><br>
+
+
+<section1 class="contentborder">
+<h1 class="inside-heading" style="color:white"><i class="fa fa-book" style="color:white"></i><blink><a href="{% url 'academicprojects' %}"> Academic Projects Completed</a></blink></h1>
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+  <tr class="academicprojects">
+<!--     <td><p class="text-white"><b>Electronic Line follower Car</b></p></td>
+    <td><p class="text-white">Car made of arduino with optical sensors</p></td>
+  </tr>
+  <tr>
+    <td><p class="text-white"><b>Prevention of air suffocation inside car </b></p></td>
+    <td><p class="text-white">Automatically activates the power window to get open in the presence of carbondioxide </p></td> -->
+    <li class="text-white">Electronic Line follower</li>
+    <li class="text-white">Prevention of air suffocation inside car </li>
+    <li class="text-white">Secured Online Voting  System by Cryptography</li>
+  </tr>
+     </div>
+    </div>
+  </div>
+</table>
+</section1>
+<br><br>
+
+
+
+<section1 class="contentborder">
+<h1 class="inside-heading" style="color:white"><i class="fa fa-book" style="color:white"></i> My Educational Chronicles:</h1>
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+      {% for education in educations.all %}
+        <div class="col-md-4">
+  <tr>
+    <td><img class="imgclass" src="{{ education.image.url }}" width="250" height="150"></img></td>
+    <td><p class="text-white"><b><form action="{% url 'zion' %}">
+          <button class="button" type="submit">Distinction Student</button></form></b></p></td>
+    <td><p class="text-white"><b>{{ education.summary }}</b></p></td>
+<!--     <td><p>{{ education.description }}</p></td> -->
+  </tr>
+      {% endfor %}
+     </div>
+    </div>
+  </div>
+</table>
+</section1>
+
+
+
+<br><br><br>
+
+
+
+<section1 class="contentborder">
+<h1 class="inside-heading">My Work History:</h1>
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+      {% for education in educations.all %}
+        <div class="col-md-4">
+  <tr>
+    <td><img class="imgclass" src="{{ education.image.url }}" width="250" height="150"></img></td>
+    <td><p><b>{{ education.summary }}</b></p></td>
+<!--     <td><p>{{ education.description }}</p></td> -->
+  </tr>
+      {% endfor %}
+     </div>
+    </div>
+  </div>
+</table>
+</section1>
+</div>
+  </main>
+
+
+  
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    
+    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+<script src="{% static 'jquery-3.4.1.min.js' %}" ></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<script src="{% static 'bootstrap.min.js' %}"></script></body>
+</html>

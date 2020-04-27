@@ -1,0 +1,120 @@
+<html>
+<title>Know about Yokesh</title>
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  opacity:0.5;
+}
+
+.bgpic{
+  padding:10%;
+    border-style: white;
+    /*background:rgba(0, 0, 0, 0.5);*/
+
+
+}
+.layout{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+ /* Adjust this value to move the positioned div up and down */
+        text-align: center;
+        padding:25px;
+/*        font-size:40px;
+        font-family:serif;*/
+     /*   font-color:white;*/
+        width: 60%; /* Set the width of the positioned div */
+        background-color: #3c3c3d;
+        border-radius:5%;
+        box-shadow: 0 9px #999;
+
+
+}
+
+.fontstyle{
+  font-color:#FFFFFF;
+  font-family:serif;
+}
+
+.icons{
+  float:left;
+}
+
+.right,.left{
+  width:50%;
+}
+.column1{
+
+height:300px;
+border-style: solid;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+  text-align:center;
+
+
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
+<body>
+<div class="bgpic"><img src="bg.jpg" id="bg" alt="">
+  <div class="layout">
+    <h1 style="color:white" "size:40px">WELCOME, WANT  TO  KNOW  ABOUT  YOKESH?</h1>
+    <br><br>
+      <div class="column" style="background-color:#aaa;">
+        <form action="{% url 'personal_home' %}">
+          <button class="button" type="submit">Personal</button></form>
+      </div>
+      <div class="column" style="background-color:#aaa;">
+        <form action="{% url 'official_home' %}">
+          <button class="button" type="submit">Professional</button></form>
+      </div>
+  </div>
+</div>
+</body>
+</html>
