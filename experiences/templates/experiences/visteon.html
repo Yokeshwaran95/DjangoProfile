@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+     <!-- highcharts CDN -->
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>  
+    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+    <script src="https://code.highcharts.com/modules/treemap.js"></script>
+
+    {% load chartit %}
+    {{ chart_list|load_charts:"cht3" }}
 <style>
 
 body,head,html{
@@ -64,6 +78,11 @@ h2{color:white;}
 <li class="text-black"> Done Automation in SCM and Build System to generate needed reports</li>
 <li class="text-black"> Jenkins Build Automation tool complete setup and configuration</li>
 </div>
+<section1 class="contentborder">
+<h1 class="inside-heading" style="color:white"><i class="fa fa-book" style="color:white"></i><blink> Overall Skill Scale</blink></h1>
+    <div id='cht3' style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">  </div>
+    <hr>
+</section1>
 
 
 

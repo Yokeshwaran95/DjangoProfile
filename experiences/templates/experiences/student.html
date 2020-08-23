@@ -2,40 +2,137 @@
 <html lang="en">
 {% load static %}
 <style>
+	body,head,html{
+	background-color: #303031;}
 .outerborder{
-	border-style:solid;
+/*	border-style:solid;*/
 	padding:10px 20px 10px;
 }
 .innerborder{
 	padding:10px 80px 10px;
 }
+.edu{
+	padding: 25px;
+}
 .h1font{
 	font-style: Arial:
 	font-size:18px;
 	padding:10px 20px 10px;
+	color:white;
 
 }
 .intro{padding:0px 50px 10px;}
 .text-black{
 	padding:0px 80px 10px;
-	font-size:18px;}
-</style>
-	
+	font-size:18px;
+	color:white;
+}
 
+.images{
+	align-items:center;
+	padding:5% 15% 5%;
+	position: relative;
+
+}
+h2, p, a{color:white;}
+</style>
+<div class ="container">
 <div class="outerborder">
 <table><tr><td>
-<h1 class="h1font">Designation: Senior Software Engineer</h1><div class="intro">
-<h2>Duration: <b>Feb 2020 - Present</b></h2>
-<h2>Roles held:</h2><li class="text-black">Build Engineer</li>
-
-</div></td>
+<h1 class="h1font"><a href="http://www.zionschool.ac.in/">Zion Matriculation Higher Secondary School</a></h1>
+<div class="intro">
+<h2>About School: </h2>
+<p>“LEARN TO LEAD” is the Motto of the school. The School Logo with the lighted torch in the hand, beside the open book, indicates Zion’s Untiring Effort and Unflinching Faith to handover the lighted torch of Zeal, Integrity, Obedience and Nobility of Thought and Word into the hands of the students.</p></div>
+</td>
+<td>
+	<table class="images"><tr>
+		<td>
+		<img src= {% static 'zion/zion_motto.png' %} width="300" height="300"></img></td>
+		<td><img src= {% static 'zion/zion_school.png' %} width="500" height="300"></img></td>
+	</tr></table>	
+</td>
 <!-- <td><img src= {% static 'visteon/olympiatechpark.jpg' % width="250" height="300"}></img></td> -->
 </tr></table>
 </div>
 <div class="innerborder">
-<h2>Responsibilities held:</h2>	
-<li class="text-black"> Develop and Implement Lauterbach Scripts</li>
-<li class="text-black"> Integrating Lauterbach scripts across projects</li>
-<li class="text-black"> Migration of SCM from clearcase to GIT and BitBucket</li>
+<h1 class="inside-heading" style="color:white"><i class="fa fa-book" style="color:white"></i> My Educational Chronicles:</h1>
+
+
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+      {% for education in object_list %}
+      {% if "th" in education.Qualifications %}
+        <div class="col-md-4">
+  <tr>
+    <td class="edu"><p class="text-white"><b>{{ education.Qualifications }}</b></p></td>
+    <td class="edu"><p class="text-white"><b>{{ education.Percentage }}</b></p></td>
+<td class="edu"><p class="text-white"><b>
+{% for des in education.get_description %}
+    <li class="text-black">{{ des }}</li>
+
+{% endfor %}
+</b></p></td>
+	<td class="edu"><p class="text-white"><b>{{ education.start_year }} - {{ education.end_year }}</b></p></td>
+  </tr>
+  {% endif %}
+      {% endfor %}
+     </div>
+    </div>
+  </div>
+</table>
+</div>
+</div>
+
+
+
+<div class ="container">
+<div class="outerborder">
+<table><tr><td>
+<h1 class="h1font"><a href="https://sairam.edu.in/">Sri Sairam Engineering College</a></h1>
+<div class="intro">
+<h2>Electronics and Communication Engineering </h2>
+<h2>About College: </h2>
+<p> A well defined vision, highly committed mission and dedicated leadership facilitate Sri Sairam Engineering College to be in the best of educational institutions in the country. Since its inception , our Institution has grown into a vast conglomerate of magnificent buildings, state-of-the art and sophisticated laboratories internet centres, modern library and a superlative sports complex-each a land mark in itself across 300 acres. Its quiet and idyllic surroundings, comprising of the architecturally…</p></div>
+</td>
+<td>
+	<table class="images"><tr>
+<!-- 		<td>
+		<img src= {% static 'sairam/sairam_logo.png' %} width="300" height="300"></img></td> -->
+		<td>
+		
+		<img src= {% static 'sairam/sairam_college.jpg' %} width="300" height="300"></img>
+	</td></tr></table>	
+</td>
+<!-- <td><img src= {% static 'visteon/olympiatechpark.jpg' % width="250" height="300"}></img></td> -->
+</tr></table>
+</div>
+<div class="innerborder">
+<h1 class="inside-heading" style="color:white"><i class="fa fa-book" style="color:white"></i> My Educational Chronicles:</h1>
+
+
+<table class="classtab">
+    <div class="container">
+      <div class="row">
+      {% for education in object_list %}
+      {% if "B.E" in education.Qualifications %}
+        <div class="col-md-4">
+  <tr>
+    <td class="edu"><p class="text-white"><b>{{ education.Qualifications }}</b></p></td>
+    <td class="edu"><p class="text-white"><b>{{ education.Percentage }}</b></p></td>
+<td class="edu"><p class="text-white"><b>
+{% for des in education.get_description %}
+    <li class="text-black">{{ des }}</li>
+{% endfor %}
+</b></p></td>
+	<td class="edu"><p class="text-white"><b>{{ education.start_year }} - {{ education.end_year }}</b></p></td>
+  </tr>
+  {% endif %}
+      {% endfor %}
+     </div>
+    </div>
+  </div>
+</table>
+</div>
 </div>
 </html>

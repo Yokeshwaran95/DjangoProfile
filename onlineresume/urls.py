@@ -18,16 +18,20 @@ from django.contrib import admin
 import experiences.views
 from django.conf import settings
 from django.conf.urls.static import static
+from experiences.views import ( Student,AcademicProjects,Papers )
+from charts.views import sales
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', experiences.views.startpage, name='home'),
-    url(r'official', experiences.views.homepage, name='official_home'),
-    url(r'personal/', experiences.views.personalhomepage, name='personal_home'),
+    url(r'^$', experiences.views.personalhomepage, name='home'),
+    url(r'charts/', sales, name='charts'),
+    url(r'official/', experiences.views.homepage, name='official_home'),
+    # url(r'personal/', experiences.views.personalhomepage, name='personal_home'),
     url(r'experiences/visteon/', experiences.views.visteon, name='visteon'),
     url(r'experiences/zf/', experiences.views.zf, name='zf'),
-    url(r'experiences/zion/', experiences.views.student, name='zion'),
-    url(r'academic-projects', experiences.views.academicprojects, name='academicprojects'),
+    url(r'experiences/zion/', Student.as_view(), name='zion'),
+    url(r'academic-projects/', AcademicProjects.as_view(), name='academicprojects'),
+    url(r'papers-workshops/', Papers.as_view(), name='papers-workshops'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

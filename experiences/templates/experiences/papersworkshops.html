@@ -34,13 +34,23 @@ h2,h3{color:white;}
 <h1 class="h1font">I am much interested in get to be updated with Technology, Share it with people and discuss on the evolutions and debate on the same. </h1>
 <!-- {{ object_list }} -->
 <div class="innerborder">
-<h2>Projects done</h2>
+<h2>Papers Presented</h2>
 {% for project in object_list %}
+{% if "Papers" in project.category %}
 
 <h3>{{ project.name }}</h3>
 {% for des in project.get_description %}
 <li class="text-black"> {{ des }}</li>
 {% endfor %}
+{% endif %}
+
+{% if "Workshops" in project.category %}
+<h2>Learnings from Workshops:</h2>
+<h3>{{project.name}}</h3>
+{% for des in project.get_description %}
+<li class="text-black"> {{ des }}</li>
+{% endfor %}
+{% endif %}
 {% endfor %}
 </div>
 </html>

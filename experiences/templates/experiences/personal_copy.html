@@ -15,7 +15,7 @@
 <div class="topnav">
   <!-- <a class="active" href="#home">Home</a> -->
 <div class="logo-image">
-  <img src= {% static 'instagram.jpg' %}></img>
+  <img src= {% static 'Yokesh_logo.jpg' %}></img>
 </div>
 <div id="clockdate">
   <div class="clockdate-wrapper">
@@ -50,42 +50,84 @@
 
     <div class="images">
 <table>
-  <tr class="otherlikes">
-    <!-- <td> -->
-      <h2>Interests: </h2>
-      <p>Like others I do have a go to destination at my uncertain times, Music. I personally like Music Composer AR Rahman songs, penned by Lyricist Vairamuthu. Here, is my <a href="https://open.spotify.com/playlist/5jAelypnSnW4Aio1ENS72C?si=WnEqqnQZQHCNLCQN-Z8YEA
-">spotify </a>playlist</p>
-      <hr>
-      <h3>Inspirations</h3>
-      <p>I don't believe in having a Role model and limiting my goals/dreams. But I do really inspire on some people who are unique and not orthodox</p>
-    <ul>
-    <li>M S Dhoni - Pressure Handling, Leadership</li>
-    <li>Elon Musk- Technology oriented entrepreneurship</li>
-  </ul>
-  </tr>
-  <tr class="icon-container">
 {% for socialmedias in socialmedia.all %}
 
-<td class="icon-container">
- <div class="section-style">
-<div class="card">
-<form action="{{ socialmedias.link }}"><button class="button">
 {% if "Facebook" in socialmedias.app %}
-<i class="fa fa-facebook"> </i>
-{% endif %}
-{% if "instagram" in socialmedias.app %}
-<i class="fa fa-instagram"> </i>
-{% endif %}
-{% if "Twitter" in socialmedias.app %}
-<i class="fa fa-twitter"> </i>
-{% endif %}
-</button></form>
+<tr>
+<td>
+ <div class="section-style">
+
+
+<div class="card">
+<div class="image-cropper">
+  <img src="{{ socialmedias.pictures.url }}">
+</div>
+  <h3>Yohan Yokesh</h3>
+<form action="{{ socialmedias.link }}"><button class="button"><i class="fa fa-facebook"> Add Friend </i></button></form>
+
 </div>
 
       </div>
+
+
 </td>
-{% endfor %}
+{% endif %}
+{% if "instagram" in socialmedias.app %}
+
+<td>
+
+<div class="section-style">
+<div class="card">
+<div class="image-cropper">
+  <img src="{{ socialmedias.pictures.url }}">
+</div>
+  <h3>The Yokesh</h3>
+<form action="{{ socialmedias.link }}"><button class="button"><i class="fa fa-instagram"> Follow </i></button></form>
+
+</div>
+
+      </div>
+
+   </td>
 </tr>
+{% endif %}
+{% if "Twitter" in socialmedias.app %}
+<tr>
+   <td>
+     <div class="section-style">
+
+<div class="card">
+<div class="image-cropper">
+  <img src="{{ socialmedias.pictures.url }}">
+</div>
+  <h3> Yokeshkcm </h3>
+<form action="{{ socialmedias.link }}"><button class="button"><i class="fa fa-twitter"> Follow </i></button></form>
+
+</div>
+
+      </div>
+      
+   </td>
+   {% endif %}
+{% if "quora" in socialmedias.app %}
+   <td>
+     <div class="section-style">
+
+<div class="card">
+<div class="image-cropper">
+  <img src="{{ socialmedias.pictures.url }}">
+</div>
+  <h3> Yokesh waran </h3>
+<form action="{{ socialmedias.link }}"><button class="button"><i class="fa fa-quora"> Follow </i></button></form>
+
+</div>
+
+      </div>
+      
+   </td>
+</tr>
+{% endif %}
+{% endfor %}
 
 </table>
   </div>
